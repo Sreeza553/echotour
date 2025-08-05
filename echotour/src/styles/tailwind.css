@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FEFEFE; /* near-white */
+    --color-foreground: #2D3748; /* deep-charcoal */
+    --color-border: #F8F9FA; /* subtle-gray-white */
+    --color-input: #F8F9FA; /* subtle-gray-white */
+    --color-ring: #FF6B35; /* energetic-orange */
+    
+    /* Card Colors */
+    --color-card: #F8F9FA; /* subtle-gray-white */
+    --color-card-foreground: #2D3748; /* deep-charcoal */
+    
+    /* Popover Colors */
+    --color-popover: #FEFEFE; /* near-white */
+    --color-popover-foreground: #2D3748; /* deep-charcoal */
+    
+    /* Muted Colors */
+    --color-muted: #F8F9FA; /* subtle-gray-white */
+    --color-muted-foreground: #718096; /* medium-gray */
+    
+    /* Primary Colors */
+    --color-primary: #FF6B35; /* energetic-orange */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #FF8E9B; /* warm-pink */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #FFD23F; /* optimistic-yellow */
+    --color-accent-foreground: #2D3748; /* deep-charcoal */
+    
+    /* Success Colors */
+    --color-success: #38A169; /* natural-green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #ED8936; /* amber-orange */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error Colors */
+    --color-error: #E53E3E; /* clear-red */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #E53E3E; /* clear-red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Gradient Colors */
+    --gradient-sunset: linear-gradient(135deg, #FF6B35 0%, #FF8E9B 100%);
+    --gradient-mesh: linear-gradient(135deg, #FF6B35 0%, #FF8E9B 50%, #FFD23F 100%);
+    
+    /* Shadow Colors */
+    --shadow-primary: 0 4px 12px rgba(255, 107, 53, 0.15);
+    --shadow-primary-hover: 0 8px 24px rgba(255, 107, 53, 0.25);
+    --shadow-card: 0 2px 8px rgba(255, 107, 53, 0.08);
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .font-caption {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  }
+}
+
+@layer components {
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .shadow-primary-hover {
+    box-shadow: var(--shadow-primary-hover);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
