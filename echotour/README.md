@@ -1,4 +1,4 @@
-React
+React-
 A contemporary project based on React which employs the most recent tools and technologies for creating responsive web applications.
 
  Features  
